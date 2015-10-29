@@ -56,6 +56,13 @@ fatal: A branch named 'new_feature' already exists.
 ###`git merge`
 Ok so we have built out our new feature on our `new_feature` branch, added and commited the changes, and we want to merge those changes back into our `master` branch. We can do this with `git merge`. When merging, you have to be on the branch you want to merge into. So in our case, we want to be on `master`. When on master we can type `git merge new_feature` to add the changes to our `master` branch.
 
+***Note*** You cannot merge a branch that does not have any staged changes. For example, if you are on the `new_feature` branch create a new file called `index.html`, you have to add and commit that file to that branch before you try and merge it to master. If you don't, you will see the following:
+
+```bash
+Already up-to-date.
+```
+Basically it's saying, there were no changes to merge, everything is up to date.
+
 ###`git branch -d`
 Now that we've merged our `new_feature` branch, we don't really need it anymore, so let's delete it. You can do this with `git branch -d new_feature`. This command takes a flag `-d`, which stands for delete, then it takes the name of the branch.
 
