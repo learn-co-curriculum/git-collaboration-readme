@@ -38,10 +38,35 @@ Switched to a new branch 'new_feature'
 ```
 This let's you know that you've created a new branch and you are now on it.
 
-If we type `git branch` again in our terminal it will now say:
+
+Now if we type `git branch` again in our terminal it will say:
 
 ```bash
 master
 * new_feature
 ```
-Here we can see we have two branches, `master` and `new` and we are now on our brand new `new_feature` branch.
+Here we can see we have two branches, `master` and `new_feature` and we are now on our brand new `new_feature` branch.
+
+***Note*** If for some reason you've already created a `new_feature` branch the output would be:
+
+```bash
+fatal: A branch named 'new_feature' already exists.
+```
+
+###`git merge`
+Ok so we have built out our new feature on our `new_feature` branch, added and commited the changes, and we want to merge those changes back into our `master` branch. We can do this with `git merge`. When merging, you have to be on the branch you want to merge into. So in our case, we want to be on `master`. When on master we can type `git merge new_feature` to add the changes to our `master` branch.
+
+###`git branch -d`
+Now that we've merged our `new_feature` branch, we don't really need it anymore, so let's delete it. You can do this with `git branch -d new_feature`. This command takes a flag `-d`, which stands for delete, then it takes the name of the branch.
+
+***Note*** You cannot delete a branch that you are current on. For example, if you are on the `new_feature` branch and you try and delete it the output will be:
+
+```bash
+error: Cannot delete the branch 'new_feature' which you are currently on.
+```
+If you see this message you can switch to `master` and run the command again. You will then see something like this:
+
+```bash
+Deleted branch new_feature (was 2528449).
+```
+If we run `git branch` again you will see that we are back to just one branch, `master`.
