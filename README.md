@@ -17,7 +17,7 @@ A key to collaborating with git is to keep discrete and individual lines of work
 
 You start work on a big feature, making a few commits that don't entirely finish the feature. You git log might look like:
 
-```
+```bash
 512bec5 Still broken, working on new-feature (aviflombaum, 2 hours ago)
 62d840 Almost done with new-feature (aviflombaum, 1 day ago)
 fbee832 Started new-feature (aviflombaum, 2 days ago)
