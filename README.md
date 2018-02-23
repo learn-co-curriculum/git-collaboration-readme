@@ -283,7 +283,6 @@ that was launched **must be closed** in order for the `merge` process to
 complete!
 
 ```
-
 Updating e5830af..bfe50fc
 Fast-forward
  new-feature      | 0
@@ -308,7 +307,6 @@ Unpacking objects: 100% (4/4), done.
 From github.com:aviflombaum/mission-critical-application
    bfe50fc..0ae1da2  master     -> origin/master
  * [new branch]      remote-feature-branch -> origin/remote-feature-branch
- 
 ```
 
 From within `master` (though technically what branch I was in when I typed `git fetch` does not matter), I executed `git fetch`. The last 3 lines of output are really important, let's take a closer look:
