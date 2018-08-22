@@ -250,21 +250,42 @@ Switched to branch 'master'
 ```
 
 We're about to perform a merge, but we need to do one tiny bit of
-house-keeping. When you run `git merge`, `git` will ask you to create a commit
+house-keeping.
+
+### For Users on the Learn In-Browser IDE
+
+Execute: `git merge -m "Adds new-feature because it is really great"`
+
+This tells `git` to perform a merge of the `new-feature` branch with a _message_
+that is specified after the `-m` "flag." This "merge message"
+usually contains information about what the branch did and why its contents are
+desirable to have in the gaining branch. Let's try it out!
+
+As you grow more comfortable with `git` and start using it in a non-browser environment
+you'll learn best practices around writing commit messages. This approach is OK while
+you're learning.
+
+### For Users on a Local Environment
+
+When you run `git merge` (don't run it just yet!), `git` will ask you to create a commit
 to reflect that you've done a merge. By default `git` will look for a default,
 console-based editor (like, perhaps the venerable [vi editor][vi]). While powerful,
 `vi` and its cousins have a challenging learning curve at the outset. To 
 keep ourselves focused on the `git` challenge at hand, we're going to tell
-`git` to use the Atom editor. Execute the following:
+`git` to use the Atom editor.
+
+Run the following in the terminal:
 
 `git config core.editor "atom --wait"`
 
 This means that when `git` asks you to write a merge commit, you'll be given a
 "merge message" file to edit _in Atom_. After you edit the file and save it,
-`git` will `--wait` for you to **close the editor session** before taking the
-contents of your file and applying them to the merge. This "merge message"
+`git` will `--wait` for you to **close the editor window with this file** before taking the
+contents of your file and applying them to the merge.
+
+This "merge message"
 usually contains details about what the branch did and why its contents are
-desirable to have in the gaining branch. Let's try it out!
+desirable to have in the gaining branch. Let's try it out! Type: `git merge` in the terminal.
 
 Now Atom will be launched and you'll be given a tab called `MERGE_MSG`. Here's
 a good place to describe what you're gaining. In this case we wrote:
@@ -281,6 +302,10 @@ operating system, the `--wait` flag we told Atom about means that the window
 that was launched **must be closed** in order for the `merge` process to
 complete!
 
+### Output
+
+Regardless of how you ran your merge, after your `git merge` has run, you'll see output like the following:
+
 ```
 Updating e5830af..bfe50fc
 Fast-forward
@@ -289,7 +314,8 @@ Fast-forward
  create mode 100644 new-feature
 ```
 
-Now the branches have been merged and if you `ls`, you'll see the `new-feature` file from the `new-feature` branch in your current working directory that is checked out to master.
+Now the branches have been merged. If you `ls`, you'll see the `new-feature` file from the `new-feature` branch
+in your current working directory. Recall, you're on `master`.  The goodies of `new-feature` have been "merged in." In practice, most merges will be many files across many directories, but the principle remains the same.
 
 ## Working with remote branches with `git fetch` and `git pull`
 
